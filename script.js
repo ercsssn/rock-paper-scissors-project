@@ -50,3 +50,11 @@ game();
 
 console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`)
 
+if (playerScore > computerScore) {
+    console.log('Victory! Player Wins!');
+}else if (computerScore > playerScore) {
+    console.log('Defeat .. Computer Wins');
+}else if (playerScore === computerScore) {
+    console.log('Draw');
+}
+
