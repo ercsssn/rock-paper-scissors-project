@@ -33,13 +33,13 @@ function playRound(playerSelection,computerSelection) {
 }
 
 function game() {
+    let round = 1;
     for (let i = 0; i < 5; i++) {
         let input = prompt('Which hand sign will you play?\n Rock, Paper, Scissors?');
         const player = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
         const computer = computerPlay();
-
-        console.log(playRound(player, computer));
-        // your code here!
+        console.log(`Round ${round} ` + playRound(player, computer));
+        round++;
      }
 }
 
