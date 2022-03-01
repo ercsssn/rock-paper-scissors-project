@@ -5,31 +5,27 @@ function computerPlay() {
 }
 
 function playRound(playerSelection,computerSelection) {
-    let input = prompt('Which hand sign will you play?\n Rock, Paper, Scissors? ');
-    const playerSelection = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
-    const computerSelection = computerPlay();
-    
     if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-        playerScore += 1;
+        playerScore++; 
         return 'You Win! Rock beats Scissors';
     }else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        playerScore += 1;
+        playerScore++;
         return 'You Win! Paper beats Rock'; 
     }else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-        playerScore += 1;
+        playerScore++;
         return 'You Win! Scissors beats Paper';
     }else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-        computerScore += 1;
+        computerScore++;
         return 'You Lose! Paper beats Rock';
     }else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-        computerScore += 1;
+        computerScore++;
         return 'You Lose! Scissors beats Paper';
     }else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-        computerScore += 1;
+        computerScore++;
         return 'You Lose! Rock beats Scissors';
     }else if (playerSelection === computerSelection){
-        playerScore += 1;
-        computerScore += 1;
+        computerScore++;
+        playerScore++;
         return 'Draw';
     }else {
         return 'Enter a valid play';
@@ -37,15 +33,20 @@ function playRound(playerSelection,computerSelection) {
 }
 
 function game() {
-    for (let i = 1; i <= 5; i++) {
-        playRound();
-        console.log(`Player Score: ${playerScore} | Computer Score ${computerScore}`);
-    
-    }
+    for (let i = 0; i < 5; i++) {
+        let input = prompt('Which hand sign will you play?\n Rock, Paper, Scissors?');
+        const player = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+        const computer = computerPlay();
+
+        console.log(playRound(player, computer));
+        // your code here!
+     }
 }
 
-
-let computerScore = 0;
-let playerScore = 0;
+playerScore = 0;
+computerScore = 0;
 
 game();
+
+console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`)
+
