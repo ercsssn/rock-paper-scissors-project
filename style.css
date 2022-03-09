@@ -1,6 +1,6 @@
 html {
-    font-size: 10px;
-    background: url('./rpsbackground.png') bottom center;
+    font-size: 6px;
+    background: url('./rpsbackground.png');
     background-size: cover;
   }
   
