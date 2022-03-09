@@ -1,7 +1,9 @@
 html {
     font-size: 6px;
-    background: url('./rpsbackground.png');
-    background-size: cover;
+    background: url('./rpsbackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
   
   body,html {
