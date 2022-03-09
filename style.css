@@ -6,41 +6,59 @@ html {
     background-position: center;
   }
   
-  body,html {
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 688px;
+  }
+
+.container {
+      width: 630px;
+      height: 525px;
+      display: flex;
+      flex-direction: column;
   }
   
-  .keys {
+.player,
+.computer {
     display: flex;
-    flex: 1;
-    min-height: 100vh;
-    align-items: center;
+    flex-shrink: 0;
+    min-height: 262px;
+    width: 630px;
     justify-content: center;
   }
+
+.player {
+    align-items: flex-end;
+}
   
-  .key {
-    border: .4rem solid black;
+.key {
+    border: .4rem solid white;
     border-radius: .5rem;
     margin: 1rem;
     font-size: 1.5rem;
     padding: 1rem .5rem;
     transition: all .07s ease;
-    width: 10rem;
+    width: 150px;
+    height: 150px;
     text-align: center;
     color: white;
     background: rgba(0,0,0,0.4);
     text-shadow: 0 0 .5rem black;
   }
   
-  .playing {
+.playing {
     transform: scale(1.1);
     border-color: #ffc600;
     box-shadow: 0 0 1rem #ffc600;
   }
   
-  kbd {
+kbd {
     display: block;
     font-size: 4rem;
   }
