@@ -34,7 +34,7 @@ function playRound(playerSelection,computerSelection) {
 
 function game() {
     let round = 1;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 1; i++) {
         let input = prompt('Which hand sign will you play?\n Rock, Paper, Scissors?');
         const player = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
         const computer = computerPlay();
