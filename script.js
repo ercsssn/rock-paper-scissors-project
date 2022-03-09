@@ -46,7 +46,7 @@ function game() {
 playerScore = 0;
 computerScore = 0;
 
-game();
+//game();
 
 console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`)
 
