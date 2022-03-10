@@ -7,14 +7,23 @@ html {
   src: url(gameFont.TTF);
 }
 
+h1 {
+  font-size: 70px;
+}
+
+.bigcontainer1 img {
+  height: 200px;
+  width: 500px;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: gameFont;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-around;
     min-height: 688px;
   }
 
