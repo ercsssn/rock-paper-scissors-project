@@ -1,9 +1,5 @@
 html {
     font-size: 6px;
-    background: url('./rpsbackground.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
   }
 
 @font-face {
@@ -23,24 +19,33 @@ body {
   }
 
 .container {
-      width: 630px;
-      height: 525px;
-      display: flex;
-      flex-direction: column;
+    width: 630px;
+    height: 525px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    padding-bottom: 2px;
   }
   
 .player,
 .computer {
     display: flex;
-    flex-shrink: 0;
-    min-height: 262px;
+    min-height: 205px;
     width: 630px;
     justify-content: center;
-    gap: 12px;
+    gap: 12px;  
+    flex-shrink: 1;
   }
 
 .player {
     align-items: flex-end;
+}
+
+.banner {
+  background-color: white;
+  font-size: 30px;
+  text-align: center;
 }
   
 .key {
@@ -49,7 +54,7 @@ body {
     align-items: center;
     border: .4rem solid white;
     border-radius: 10px;
-    margin: 1rem;
+    margin: 15px;
     font-size: 10px;
     gap: 5px;
     padding: 1rem .5rem;
