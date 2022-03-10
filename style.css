@@ -5,11 +5,16 @@ html {
     background-attachment: fixed;
     background-position: center;
   }
-  
+
+@font-face {
+  font-family: gameFont;
+  src: url(gameFont.TTF);
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: gameFont;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,10 +43,15 @@ body {
 }
   
 .key {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     border: .4rem solid white;
     border-radius: .5rem;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 10px;
+    gap: 5px;
     padding: 1rem .5rem;
     transition: all .07s ease;
     width: 150px;
@@ -60,5 +70,6 @@ body {
   
 kbd {
     display: block;
-    font-size: 4rem;
+    font-family: gameFont;
+    font-size: 20px;
   }
