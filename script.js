@@ -35,7 +35,7 @@ function playRound(playerSelection,computerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 
-let playerSelection, computerSelection;
+let player, computer;
 
 function selectKey(e) {
     if (e.target !== e.currentTarget) {
@@ -44,13 +44,20 @@ function selectKey(e) {
         let parent = document.querySelector('.key.invert');
         let child = parent.querySelector('kbd');
         let play = child.textContent;
-        playerSelection = play;
+        player = play;
     }
 }
 
+function playGame(e) {
+    computer = computerPlay();
+    let banner = document.querySelector('.banner');
+    banner.textContent = playRound(player,computer);
+}
 
 const keys = document.querySelector('.player');
 keys.addEventListener('click',selectKey);
+
+window.addEventListener('keydown', playGame);
 
 
 
