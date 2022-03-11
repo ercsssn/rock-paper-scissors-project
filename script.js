@@ -32,29 +32,49 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-function game() {
-    let round = 1;
-    for (let i = 0; i < 1; i++) {
-        let input = prompt('Which hand sign will you play?\n Rock, Paper, Scissors?');
-        const player = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
-        const computer = computerPlay();
-        console.log(`Round ${round} ` + playRound(player, computer));
-        round++;
-     }
+let playerScore = 0;
+let computerScore = 0;
+
+let playerSelection, computerSelection;
+
+function selectKey(e) {
+    if (e.target !== e.currentTarget) {
+        let clickedItem = e.target;
+        clickedItem.classList.toggle('invert');
+        let parent = document.querySelector('.key.invert');
+        let child = parent.querySelector('kbd');
+        let play = child.textContent;
+        playerSelection = play;
+    }
 }
 
-playerScore = 0;
-computerScore = 0;
+
+const keys = document.querySelector('.player');
+keys.addEventListener('click',selectKey);
+
+
+
+
+
+
+
+
+
+
+
+
 
 //game();
 
-console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`)
+//console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`)
 
-if (playerScore > computerScore) {
-    console.log('Victory! Player Wins!');
-}else if (computerScore > playerScore) {
-    console.log('Defeat .. Computer Wins');
-}else if (playerScore === computerScore) {
-    console.log('Draw');
-}
+//if (playerScore > computerScore) {
+   // console.log('Victory! Player Wins!');
+//}else if (computerScore > playerScore) {
+    //console.log('Defeat .. Computer Wins');
+//}else if (playerScore === computerScore) {    
+    //console.log('Draw');
+//}
+
+//window.addEventListener('keydown',game);
 
