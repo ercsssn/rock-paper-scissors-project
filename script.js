@@ -32,10 +32,20 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+function changeRound() {
+    let banner = document.querySelector('.banner');
 
-let player, computer;
+    let playerItem = document.querySelector('.player');
+    const playerButton = playerItem.querySelector('.key.invert');
+
+    let computerItem = document.querySelector('.computer');
+    const compButton = computerItem.querySelector('.key.invert');
+
+    banner.textContent = 'Press any key to start';
+    playerButton.classList.remove('invert');
+    compButton.classList.remove('invert');
+
+}
 
 function selectKey(e) {
     if (e.target !== e.currentTarget) {
@@ -63,17 +73,31 @@ function playGame(e) {
     }
     
     let banner = document.querySelector('.banner');
+    let sub = document.querySelector('.sub');
     banner.textContent = playRound(player,computer);
+    sub.textContent = `Player Score: ${playerScore} | Computer Score: ${computerScore}`;
+    
+} 
 
-    if (playerScore == 5) {
-        banner.textContent = 'Victory! You Win!'
-    } 
-}
+let playerScore = 0;
+let computerScore = 0;
+let player, computer;
+
+const restart = document.querySelector('.banner');
+restart.addEventListener('click',changeRound);
 
 const keys = document.querySelector('.player');
 keys.addEventListener('click',selectKey);
 
 window.addEventListener('keydown', playGame);
+
+
+
+
+
+
+
+
 
 
 
