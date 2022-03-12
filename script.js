@@ -40,8 +40,9 @@ let player, computer;
 function selectKey(e) {
     if (e.target !== e.currentTarget) {
         let clickedItem = e.target;
-        clickedItem.classList.toggle('invert');
-        let parent = document.querySelector('.key.invert');
+        clickedItem.classList.toggle('invert'); // Invert button color when selected
+
+        let parent = document.querySelector('.key.invert'); // Get kbd text content for playerSelection
         let child = parent.querySelector('kbd');
         let play = child.textContent;
         player = play;
@@ -50,8 +51,23 @@ function selectKey(e) {
 
 function playGame(e) {
     computer = computerPlay();
+    let computerParent = document.querySelector('.computer');
+    let computerButtons = computerParent.querySelectorAll('.key');
+    
+    for (let i=0; i < computerButtons.length; i++) {
+        let buttonText = computerButtons[i].querySelector('kbd');
+        computerText = buttonText.textContent;
+        if (computerText === computer) {
+            computerButtons[i].classList.add('invert');  // highlight computer selection
+        }
+    }
+    
     let banner = document.querySelector('.banner');
     banner.textContent = playRound(player,computer);
+
+    if (playerScore == 5) {
+        banner.textContent = 'Victory! You Win!'
+    } 
 }
 
 const keys = document.querySelector('.player');
