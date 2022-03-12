@@ -45,6 +45,11 @@ function changeRound() {
     playerButton.classList.remove('invert');
     compButton.classList.remove('invert');
 
+    if (playerScore === 5) {
+        banner.textContent = 'Victory! Player Wins!';
+    } else if (computerScore === 5) {
+        banner.textContent = 'Defeat... Computer Wins';
+    }
 }
 
 function selectKey(e) {
