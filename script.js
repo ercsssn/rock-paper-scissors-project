@@ -47,8 +47,10 @@ function changeRound() {
 
     if (playerScore === 5) {
         banner.textContent = 'Victory! Player Wins!';
+        window.setTimeout(location.reload.bind(location),3000);
     } else if (computerScore === 5) {
-        banner.textContent = 'Defeat... Computer Wins';
+        banner.textContent = 'Defeat... Computer Wins'; 
+        window.setTimeout(location.reload.bind(location),3000);
     }
 }
 
