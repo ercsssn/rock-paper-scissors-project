@@ -39,12 +39,13 @@ function changeRound() {
     const playerButton = playerItem.querySelector('.key.invert');
 
     let computerItem = document.querySelector('.computer');
-    const compButton = computerItem.querySelector('.key.invert');
+    const compButton = computerItem.querySelector('button');
 
     banner.textContent = 'Press any key to start';
+    console.log(compButton);
     playerButton.classList.remove('invert');
     compButton.classList.remove('invert');
-
+    console.log(compButton);
     if (playerScore === 5) {
         banner.textContent = 'Victory! Player Wins!';
         window.setTimeout(location.reload.bind(location),3000);
