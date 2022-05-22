@@ -39,13 +39,13 @@ function changeRound() {
     const playerButton = playerItem.querySelector('.key.invert');
 
     let computerItem = document.querySelector('.computer');
-    const compButton = computerItem.querySelector('button');
+    const compButton = computerItem.querySelector('.key.invert');
 
     banner.textContent = 'Press any key to start';
-    console.log(compButton);
+    // console.log(compButton);
     playerButton.classList.remove('invert');
     compButton.classList.remove('invert');
-    console.log(compButton);
+    // console.log(compButton);
     if (playerScore === 5) {
         banner.textContent = 'Victory! Player Wins!';
         window.setTimeout(location.reload.bind(location),3000);
@@ -58,12 +58,15 @@ function changeRound() {
 function selectKey(e) {
     if (e.target !== e.currentTarget) {
         let clickedItem = e.target;
+        console.log(clickedItem);
         clickedItem.classList.toggle('invert'); // Invert button color when selected
 
         let parent = document.querySelector('.key.invert'); // Get kbd text content for playerSelection
         let child = parent.querySelector('kbd');
         let play = child.textContent;
         player = play;
+    }else {
+        return;
     }
 }
 
@@ -95,6 +98,7 @@ const restart = document.querySelector('.banner');
 restart.addEventListener('click',changeRound);
 
 const keys = document.querySelector('.player');
+// console.log(keys); 
 keys.addEventListener('click',selectKey);
 
 window.addEventListener('keydown', playGame);
