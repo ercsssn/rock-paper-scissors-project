@@ -89,8 +89,10 @@ function playGame(e) {
     
     let banner = document.querySelector('.banner');
     let sub = document.querySelector('.sub');
+    let instructions = document.querySelector('.instruct');
     banner.textContent = playRound(player,computer);
     sub.textContent = `Player Score: ${playerScore} | Computer Score: ${computerScore}`;
+    instructions.textContent = "( Click the banner for next round)";
     
 } 
 
