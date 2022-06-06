@@ -41,7 +41,7 @@ function changeRound() {
     let computerItem = document.querySelector('.computer');
     const compButton = computerItem.querySelector('.key.invert');
 
-    banner.textContent = 'Press any key to start';
+    banner.textContent = 'Select your hand!';
     // console.log(compButton);
     playerButton.classList.remove('invert');
     compButton.classList.remove('invert');
