@@ -58,7 +58,11 @@ function changeRound() {
 function selectKey(e) {
     if (e.target !== e.currentTarget) {
         let clickedItem = e.target;
-        console.log(clickedItem);
+        // console.log(clickedItem);
+        console.log(e.target.tagName);
+        if (e.target.tagName == "IMG" || e.target.tagName == "SPAN" || e.target.tagName == "KBD"){
+            return;
+        }
         clickedItem.classList.toggle('invert'); // Invert button color when selected
 
         let parent = document.querySelector('.key.invert'); // Get kbd text content for playerSelection
